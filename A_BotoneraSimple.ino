@@ -6,14 +6,13 @@ const int buttonPin3 = 4;         // input pin for pushbutton
 const int buttonPin4 = 5;         // input pin for pushbutton
 const int buttonPin5 = 6;         // input pin for pushbutton
 const int buttonPin6 = 7;         // input pin for pushbutton
-
+// Flag for not repitting pressed key
 boolean flag1 = true; 
 boolean flag2 = true; 
 boolean flag3 = true; 
 boolean flag4 = true; 
 boolean flag5 = true; 
 boolean flag6 = true; 
-
 
 void setup() {
   // make the pushButton pin an input:
@@ -37,9 +36,6 @@ void loop() {
   int buttonState5 = digitalRead(buttonPin5);
   int buttonState6 = digitalRead(buttonPin6);
 
-  switch (buttonState1){
-
-  }
   /////////* Boton f */////////
   // if the button state has changed,
   if (buttonState1 == HIGH){
@@ -96,5 +92,5 @@ void loop() {
   }
   
   //Delay time
-  delay(150);
+  delay(100);
 }
