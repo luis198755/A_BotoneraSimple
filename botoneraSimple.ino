@@ -19,7 +19,6 @@
 
   https://www.arduino.cc/en/Tutorial/BuiltInExamples/KeyboardMessage
 */
-
 #include "Keyboard.h"
 
 const int buttonPin1 = 2;         // input pin for pushbutton
@@ -29,16 +28,12 @@ const int buttonPin4 = 5;         // input pin for pushbutton
 const int buttonPin5 = 6;         // input pin for pushbutton
 const int buttonPin6 = 7;         // input pin for pushbutton
 
-
 int previousButtonState1 = HIGH;  // for checking the state of a pushButton
 int previousButtonState2 = HIGH;  // for checking the state of a pushButton
 int previousButtonState3 = HIGH;  // for checking the state of a pushButton
 int previousButtonState4 = HIGH;  // for checking the state of a pushButton
 int previousButtonState5 = HIGH;  // for checking the state of a pushButton
 int previousButtonState6 = HIGH;  // for checking the state of a pushButton
-
-
-int counter = 0;                 // button push counter
 
 void setup() {
   // make the pushButton pin an input:
@@ -48,7 +43,6 @@ void setup() {
   pinMode(buttonPin4, INPUT_PULLUP);
   pinMode(buttonPin5, INPUT_PULLUP);
   pinMode(buttonPin6, INPUT_PULLUP);
-
 
   // initialize control over the keyboard:
   Keyboard.begin();
@@ -62,91 +56,66 @@ void loop() {
   int buttonState4 = digitalRead(buttonPin4);
   int buttonState5 = digitalRead(buttonPin5);
   int buttonState6 = digitalRead(buttonPin6);
-
+  /////////* Boton f */////////
   // if the button state has changed,
   if ((buttonState1 != previousButtonState1)
       // and it's currently pressed:
       && (buttonState1 == HIGH)) {
-    // increment the button counter
-    counter++;
-    // type out a message
-    Keyboard.print("f");
-    //Keyboard.print(counter);
-    //Keyboard.println(" años.");
+      // type out a message
+      Keyboard.print("f");
   }
   // save the current button state for comparison next time:
   previousButtonState1 = buttonState1;
-
+  /////////* Boton g */////////
   // if the button state has changed,
   if ((buttonState2 != previousButtonState2)
       // and it's currently pressed:
       && (buttonState2 == HIGH)) {
-    // increment the button counter
-    counter++;
     // type out a message
     Keyboard.print("g");
-    //Keyboard.print(counter);
-    //Keyboard.println(" años.");
   }
   // save the current button state for comparison next time:
   previousButtonState2 = buttonState2;
-
+  /////////* Boton h */////////
   // if the button state has changed,
   if ((buttonState3 != previousButtonState3)
       // and it's currently pressed:
       && (buttonState3 == HIGH)) {
-    // increment the button counter
-    counter++;
     // type out a message
     Keyboard.print("h");
-    //Keyboard.print(counter);
-    //Keyboard.println(" años.");
   }
   // save the current button state for comparison next time:
   previousButtonState3 = buttonState3;
-
+  /////////* Boton j */////////
   // if the button state has changed,
   if ((buttonState4 != previousButtonState4)
       // and it's currently pressed:
       && (buttonState4 == HIGH)) {
-    // increment the button counter
-    counter++;
     // type out a message
     Keyboard.print("j");
-    //Keyboard.print(counter);
-    //Keyboard.println(" años.");
   }
   // save the current button state for comparison next time:
   previousButtonState4 = buttonState4;
-
+  /////////* Boton k */////////
   // if the button state has changed,
   if ((buttonState5 != previousButtonState5)
       // and it's currently pressed:
       && (buttonState5 == HIGH)) {
-    // increment the button counter
-    counter++;
-    // type out a message
     Keyboard.print("k");
-    //Keyboard.print(counter);
-    //Keyboard.println(" años.");
   }
   // save the current button state for comparison next time:
   previousButtonState5 = buttonState5;
-
+  /////////* Boton l */////////
   // if the button state has changed,
   if ((buttonState6 != previousButtonState6)
       // and it's currently pressed:
       && (buttonState6 == HIGH)) {
-    // increment the button counter
-    counter++;
     // type out a message
     Keyboard.print("l");
-    //Keyboard.print(counter);
-    //Keyboard.println(" años.");
   }
   // save the current button state for comparison next time:
   previousButtonState6 = buttonState6;
 
-
+  //Delay time
   delay(20);
 }
