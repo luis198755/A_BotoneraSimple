@@ -117,5 +117,5 @@ void loop() {
   previousButtonState6 = buttonState6;
 
   //Delay time
-  delay(20);
+  delay(100);
 }
