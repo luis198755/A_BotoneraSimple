@@ -1,62 +1,40 @@
 #include "Keyboard.h"
 
-const int buttonPin1 = 2;         // input pin for pushbutton
-const int buttonPin2 = 3;         // input pin for pushbutton
-const int buttonPin3 = 4;         // input pin for pushbutton
-const int buttonPin4 = 5;         // input pin for pushbutton
-const int buttonPin5 = 6;         // input pin for pushbutton
-const int buttonPin6 = 7;         // input pin for pushbutton
+#define CantidadBoton 6
+//Pines de salida designados en el mCU
+int bottonPin[CantidadBoton] = {2, 3, 4, 5, 6, 7};
 // Flag for not repitting pressed key
-boolean flag1 = true; 
-boolean flag2 = true; 
-boolean flag3 = true; 
-boolean flag4 = true; 
-boolean flag5 = true; 
-boolean flag6 = true; 
-
+boolean flag[CantidadBoton] = {true, true, true, true, true, true};
+ 
 void setup() {
   // make the pushButton pin an input:
-  pinMode(buttonPin1, INPUT_PULLUP);
-  pinMode(buttonPin2, INPUT_PULLUP);
-  pinMode(buttonPin3, INPUT_PULLUP);
-  pinMode(buttonPin4, INPUT_PULLUP);
-  pinMode(buttonPin5, INPUT_PULLUP);
-  pinMode(buttonPin6, INPUT_PULLUP);
-
+  for (int i=0; i<CantidadBoton; i=i+1){
+    pinMode(bottonPin[i], INPUT_PULLUP);
+  }
   // initialize control over the keyboard:
   Keyboard.begin();
 }
 
 void loop() {
   // read the pushbutton:
-  int buttonState1 = digitalRead(buttonPin1);
-  int buttonState2 = digitalRead(buttonPin2);
-  int buttonState3 = digitalRead(buttonPin3);
-  int buttonState4 = digitalRead(buttonPin4);
-  int buttonState5 = digitalRead(buttonPin5);
-  int buttonState6 = digitalRead(buttonPin6);
-
-  /////////* Boton f */////////
-  flag1 = key(buttonState1, flag1, 'f');
-  /////////* Boton g */////////
-  // if the button state has changed,
-  flag2 = key(buttonState2, flag2, 'g');
-  /////////* Boton h */////////
-  // if the button state has changed,
-  flag3 = key(buttonState3, flag3, 'h');
-  /////////* Boton j */////////
-  // if the button state has changed,
-  flag4 = key(buttonState4, flag4, 'j');
-  /////////* Boton k */////////
-  // if the button state has changed,
-  flag5 = key(buttonState5, flag5, 'k');
-  /////////* Boton l */////////
-  // if the button state has changed,
-  flag6 = key(buttonState6, flag6, 'l');
+  int buttonState[CantidadBoton];
+  int j = 0;
+  for (int i=0; i<CantidadBoton; i=i+1){
+    // Read button state from 2-7 pins
+    buttonState[i] = digitalRead(bottonPin[i]);
+    if (i == 3){
+      // Skipping 'i' letter
+      j = j + 1;
+    }
+    // Function for dettecting and sending f, g, h, j, k, l letters
+    flag[i] = key(buttonState[i], flag[i], (102+j));
+    j=j+1;
+  }
   //Delay time
   delay(100);
 }
-//////////*Funciones*///////////////
+///////////////*Funciones*///////////////
+// Function for dettecting and sending f, g, h, j, k, l letters
 boolean key(int buttonState, boolean flag, char letter){
   // if the button state has changed,
   if (buttonState == HIGH){
@@ -64,7 +42,7 @@ boolean key(int buttonState, boolean flag, char letter){
   }
   else if((buttonState == LOW) && (flag == false)){
     flag = true;
-    Keyboard.print(letter);
+    Keyboard.print(letter); // Printing corresponding letter
   }
   return flag;
 }
