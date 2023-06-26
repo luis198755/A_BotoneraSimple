@@ -37,60 +37,34 @@ void loop() {
   int buttonState6 = digitalRead(buttonPin6);
 
   /////////* Boton f */////////
-  // if the button state has changed,
-  if (buttonState1 == HIGH){
-    flag1 = false;
-  }
-  else if((buttonState1 == LOW) && (flag1 == false)){
-    flag1 = true;
-    Keyboard.print("f");
-  }
+  flag1 = key(buttonState1, flag1, 'f');
   /////////* Boton g */////////
   // if the button state has changed,
-  if (buttonState2 == HIGH){
-    flag2 = false;
-  }
-  else if((buttonState2 == LOW) && (flag2 == false)){
-    flag2 = true;
-    Keyboard.print("g");
-  }
+  flag2 = key(buttonState2, flag2, 'g');
   /////////* Boton h */////////
   // if the button state has changed,
-  if (buttonState3 == HIGH){
-    flag3 = false;
-  }
-  else if((buttonState3 == LOW) && (flag3 == false)){
-    flag3 = true;
-    Keyboard.print("h");
-  }
+  flag3 = key(buttonState3, flag3, 'h');
   /////////* Boton j */////////
   // if the button state has changed,
-  if (buttonState4 == HIGH){
-    flag4 = false;
-  }
-  else if((buttonState4 == LOW) && (flag4 == false)){
-    flag4 = true;
-    Keyboard.print("j");
-  }
+  flag4 = key(buttonState4, flag4, 'j');
   /////////* Boton k */////////
   // if the button state has changed,
-  if (buttonState5 == HIGH){
-    flag5 = false;
-  }
-  else if((buttonState5 == LOW) && (flag5 == false)){
-    flag5 = true;
-    Keyboard.print("k");
-  }
+  flag5 = key(buttonState5, flag5, 'k');
   /////////* Boton l */////////
   // if the button state has changed,
-  if (buttonState6 == HIGH){
-    flag6 = false;
-  }
-  else if((buttonState6 == LOW) && (flag6 == false)){
-    flag6 = true;
-    Keyboard.print("l");
-  }
-  
+  flag6 = key(buttonState6, flag6, 'l');
   //Delay time
   delay(100);
+}
+//////////*Funciones*///////////////
+boolean key(int buttonState, boolean flag, char letter){
+  // if the button state has changed,
+  if (buttonState == HIGH){
+    flag = false;
+  }
+  else if((buttonState == LOW) && (flag == false)){
+    flag = true;
+    Keyboard.print(letter);
+  }
+  return flag;
 }
