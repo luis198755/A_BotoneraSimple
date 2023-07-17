@@ -1,4 +1,21 @@
 //////////////////**Code for Arduino Leonardo**//////////////////////
+/*
+  Keyboard Message test
+
+  For the Arduino Leonardo and Micro.
+
+  Sends a text string when a button is pressed.
+
+  The circuit:
+  - pushbutton attached from pin 4 to +5V
+  - Input Pullup from 2 to 7
+
+  created 2023
+  by Luis A. Rodríguez
+
+  */
+/////////////////////////////////////////////////////////////////////
+// Librerías
 #include "Keyboard.h"
 
 #define CantidadBoton 6
@@ -32,7 +49,7 @@ void loop() {
     j=j+1;
   }
   //Delay time
-  delay(100);
+  delay(50);
 }
 ///////////////*Funciones*///////////////
 // Function for dettecting and sending f, g, h, j, k, l letters
