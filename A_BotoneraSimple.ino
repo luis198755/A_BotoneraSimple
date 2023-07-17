@@ -1,3 +1,4 @@
+//////////////////**Code for Arduino Leonardo**//////////////////////
 #include "Keyboard.h"
 
 #define CantidadBoton 6
