@@ -7,18 +7,12 @@
 
   The circuit:
   - pushbutton attached from pin 4 to +5V
-  - 10 kilohm resistor attached from pin 4 to ground
+  - Input Pullup from 2 to 7
 
-  created 24 Oct 2011
-  modified 27 Mar 2012
-  by Tom Igoe
-  modified 11 Nov 2013
-  by Scott Fitzgerald
+  created 2023
+  by Luis A. Rodríguez
 
-  This example code is in the public domain.
-
-  https://www.arduino.cc/en/Tutorial/BuiltInExamples/KeyboardMessage
-*/
+  */
 #include "Keyboard.h"
 
 const int buttonPin1 = 2;         // input pin for pushbutton
