@@ -13,6 +13,8 @@
   created 2023
   by Luis A. Rodríguez
 
+  Versión: V1 - Junio 2023 Solidaridad
+
   */
 /////////////////////////////////////////////////////////////////////
 // Librerías
