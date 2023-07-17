@@ -56,7 +56,7 @@ void loop() {
       // and it's currently pressed:
       && (buttonState1 == HIGH)) {
       // type out a message
-      Keyboard.print("f");
+      Keyboard.print("d");
   }
   // save the current button state for comparison next time:
   previousButtonState1 = buttonState1;
@@ -66,7 +66,7 @@ void loop() {
       // and it's currently pressed:
       && (buttonState2 == HIGH)) {
     // type out a message
-    Keyboard.print("g");
+    Keyboard.print("w");
   }
   // save the current button state for comparison next time:
   previousButtonState2 = buttonState2;
@@ -76,7 +76,7 @@ void loop() {
       // and it's currently pressed:
       && (buttonState3 == HIGH)) {
     // type out a message
-    Keyboard.print("h");
+    Keyboard.print("a");
   }
   // save the current button state for comparison next time:
   previousButtonState3 = buttonState3;
@@ -86,7 +86,7 @@ void loop() {
       // and it's currently pressed:
       && (buttonState4 == HIGH)) {
     // type out a message
-    Keyboard.print("j");
+    Keyboard.print("s");
   }
   // save the current button state for comparison next time:
   previousButtonState4 = buttonState4;
@@ -95,7 +95,7 @@ void loop() {
   if ((buttonState5 != previousButtonState5)
       // and it's currently pressed:
       && (buttonState5 == HIGH)) {
-    Keyboard.print("k");
+    Keyboard.print(" ");
   }
   // save the current button state for comparison next time:
   previousButtonState5 = buttonState5;
