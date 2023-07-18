@@ -17,6 +17,55 @@
 
   */
 /////////////////////////////////////////////////////////////////////
+#include <Keyboard.h>
+
+const int buttonPin1 = 2;  // Pin for the first push button
+const int buttonPin2 = 3;  // Pin for the second push button
+// Add more button pins if needed
+
+void setup() {
+  // Set the button pins as INPUT with internal pull-up resistors enabled
+  pinMode(buttonPin1, INPUT_PULLUP);
+  pinMode(buttonPin2, INPUT_PULLUP);
+  // Add more button pins if needed
+
+  // Initialize the Keyboard library
+  Keyboard.begin();
+}
+
+void loop() {
+  // Check the state of each push button
+  int buttonState1 = digitalRead(buttonPin1);
+  int buttonState2 = digitalRead(buttonPin2);
+  // Add more button states if needed
+
+  // Check if a button is pressed (buttonState is LOW when the button is pressed due to the pull-up resistor)
+  if (buttonState1 == LOW) {
+    // Simulate a key press for the letter 'A'
+    Keyboard.press('d');
+    // You can add some delay if needed to control how long the key is held down
+    delay(100);
+  } else {
+    // Release the key if the button is not pressed
+    Keyboard.release('d');
+  }
+
+  if (buttonState2 == LOW) {
+    // Simulate a key press for the letter 'B'
+    Keyboard.press('w');
+    // You can add some delay if needed to control how long the key is held down
+    delay(100);
+  } else {
+    // Release the key if the button is not pressed
+    Keyboard.release('w');
+  }
+
+  // Add more button actions if needed
+
+  // You may also want to add some small delays to debounce the buttons
+  delay(50);
+}
+/*
 // Librerías
 #include "Keyboard.h"
 
@@ -52,10 +101,10 @@ void loop() {
   }
   //Delay time
   delay(50);
-}
+}*/
 ///////////////*Funciones*///////////////
 // Function for dettecting and sending f, g, h, j, k, l letters
-boolean key(int buttonState, boolean flag, char letter){
+/*boolean key(int buttonState, boolean flag, char letter){
   // if the button state has changed,
   if (buttonState == HIGH){
     flag = false;
@@ -65,4 +114,4 @@ boolean key(int buttonState, boolean flag, char letter){
     Keyboard.print(letter); // Printing corresponding letter
   }
   return flag;
-}
+}*/
